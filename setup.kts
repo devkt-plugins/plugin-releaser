@@ -9,6 +9,7 @@ listOf(
     official("json"),
     official("solidity"),
     official("emmylua"),
+    official("properties"),
     official("la-clojure"),
     github("covscript", "covscript-devkt")
 )
