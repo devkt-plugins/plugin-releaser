@@ -23,6 +23,7 @@ listOf(
     }
     .map { it.split('/') }
     .mapNotNull { it.lastOrNull() }
+    .map { it.removeSuffix(".git") }
     .map { File(it) }
     .onEach { project ->
       ProcessBuilder()

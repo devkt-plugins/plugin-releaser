@@ -1,5 +1,4 @@
 language: java
-language: kotlin
 jdk:
 - oraclejdk8
 script:
@@ -7,4 +6,12 @@ script:
 - source /home/travis/.sdkman/bin/sdkman-init.sh
 - sdk install kotlin
 - kotlinc -script setup.kts
-
+deploy:
+  provider: releases
+  api_key:
+    secure: ZzVnoIeZ1kdsP9rwLCgKr5S+Es/KKBQAcovRgFlP8yytPnk8Epxz7/kUT0+c9gNfVR24Q8sXmlC0cgqMU+Y6+yBOMce1MO48h7te59tm1/07tQXKympONk2WKvNAbiHeKtI5lgeoYApEw6mtUgs8LIQdqQSPPSbcip2fxM0t592huuNoWn1K4zrI1rTbOARH8Sf7si6/P09WiWHVOqtTbFxKRDnDAoz+JlKkFONf/dQkGRQVI10qmQZjgK9g9+xBKrgKi8MbNKTmR7bVlftnLsv9EsrIdjSnN6nQLfT/dipC/NKNuB/2fYGfXvmA4q2dhgQWrjPoGBhPZWs1Lr8BM42J3SQFsmiBSJLSszIsNHWXat8zgPzKtiPDr/TRwrXw/Y8jrjHftg65wE/b32Hj3DllQ9xJ70z17ZC8zpnbKgFKq7eSKt2fV/1iqo7A6JxZBcf1RGGvbf1NOf/00vbjjGxI8quDmDW4UmgSBQT50C1mDd8kyg8ZOMpVGZCkP0uQJe/RSHBShWJH7gbNTkUGgT4CB2b7rf7Otyr/UV0Sx+XzvX5xdE7yoKpEoQWv6bRE3nUR3JS9Im+5WawEN2tdfNnOvLK6Nc7F8eb+vQdWR1iTFs8ZAI6MIYV++B8UJxACLTsH92dNIjXLEp/b1vEgsGuYWPAmU0j2aOVZxpOw+H4=
+  file_glob: true
+  file: target/*
+  skip_cleanup: true
+  on:
+    repo: devkt-plugins/plugin-releaser
