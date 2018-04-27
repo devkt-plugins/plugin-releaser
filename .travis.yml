@@ -1,0 +1,10 @@
+language: java
+language: kotlin
+jdk:
+- oraclejdk8
+script:
+- bash -c "curl -s https://get.sdkman.io | bash"
+- source /home/travis/.sdkman/bin/sdkman-init.sh
+- sdk install kotlin
+- kotlinc -script setup.kts
+
