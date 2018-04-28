@@ -11,6 +11,7 @@ listOf(
     lang("emmylua"),
     lang("la-clojure"),
     lang("yaml"),
+    lang("toml"),
     github("ice1000", "properties-devkt"), // TODO awaiting GitHub fix bug
     github("covscript", "covscript-devkt")
 )
@@ -29,7 +30,7 @@ listOf(
     .map { File(it) }
     .onEach { project ->
       ProcessBuilder()
-          .command("bash", "gradlew", "jar")
+          .command("bash", "gradlew", "jar", "--info", "--warning-mode=all")
           .directory(project)
           .inheritIO()
           .start()
