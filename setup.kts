@@ -1,22 +1,23 @@
 import java.io.File
 
-fun official(language: String) = "https://github.com/devkt-plugins/$language-devkt.git"
+fun lang(language: String) = "https://github.com/devkt-plugins/$language-devkt.git"
 fun github(org: String, repo: String) = "https://github.com/$org/$repo.git"
 val target = File("target").apply { if (!exists()) mkdir() }
 
 listOf(
-    official("julia"),
-    official("json"),
-    official("solidity"),
-    official("emmylua"),
-    official("properties"),
-    official("la-clojure"),
+    lang("julia"),
+    lang("json"),
+    lang("solidity"),
+    lang("emmylua"),
+    lang("la-clojure"),
+    lang("yaml"),
+    github("ice1000", "properties-devkt"), // TODO awaiting GitHub fix bug
     github("covscript", "covscript-devkt")
 )
     .asSequence()
     .onEach { repository ->
       ProcessBuilder()
-          .command("git", "clone", repository)
+          .command("git", "clone", repository, "--depth=1")
           .directory(null)
           .inheritIO()
           .start()
