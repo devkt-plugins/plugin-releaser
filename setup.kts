@@ -12,6 +12,7 @@ listOf(
     lang("la-clojure"),
     lang("yaml"),
     lang("toml"),
+    lang("rust"),
     github("ice1000", "properties-devkt"), // TODO awaiting GitHub fix bug
     github("covscript", "covscript-devkt")
 )
