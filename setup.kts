@@ -46,6 +46,5 @@ listOf(
           .asSequence()
     }
     .filter { it.extension == "jar" }
-    .forEach {
-      it.copyTo(target.resolve(it.name), overwrite = true)
-    }
+    .onEach { it.copyTo(target.resolve(it.name), overwrite = true) }
+    .forEach { println("Collected ${it.nameWithoutExtension}") }
