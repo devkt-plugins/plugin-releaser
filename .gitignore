@@ -1,3 +1,5 @@
 *-devkt
 target
 *.iml
+kotlinc
+*.zip
