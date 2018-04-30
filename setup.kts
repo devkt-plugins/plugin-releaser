@@ -13,7 +13,7 @@ listOf(
     lang("yaml"),
     lang("toml"),
     lang("rust"),
-    github("ice1000", "properties-devkt"), // TODO awaiting GitHub fix bug
+    lang("properties"),
     github("covscript", "covscript-devkt")
 )
     .asSequence()
