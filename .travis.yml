@@ -9,8 +9,8 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 script:
-  - wget https://github.com/JetBrains/kotlin/releases/download/v1.2.41/kotlin-compiler-1.2.41.zip
-  - unzip kotlin-compiler-1.2.41.zip
+  - wget https://github.com/JetBrains/kotlin/releases/download/v1.2.70/kotlin-compiler-1.2.70.zip
+  - unzip kotlin-compiler-1.2.70.zip
   - export PATH=kotlinc/bin:$PATH
   - kotlinc -script setup.kts
 deploy:

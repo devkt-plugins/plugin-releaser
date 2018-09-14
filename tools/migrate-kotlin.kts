@@ -17,5 +17,6 @@ File(".")
 		.map { (f, s) ->
 			//language=RegExp
 			f to s.replace(Regex("val\\s+kotlinVersion\\s+=\\s+\"[^\"]+\""), "val kotlinVersion = \"$newVersion\"")
+					.replace(Regex("kotlin\\(\"jvm\"\\) version \"[^\"]+\""), "kotlin(\"jvm\") version \"$newVersion\"")
 		}
 		.forEach { (file, string) -> file.writeText(string) }
