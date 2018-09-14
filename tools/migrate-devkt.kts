@@ -1,6 +1,6 @@
 import java.io.File
 
-val newVersion = "v1.4.1"
+val newVersion = "v1.5-alpha"
 
 File(".")
 		.absoluteFile
