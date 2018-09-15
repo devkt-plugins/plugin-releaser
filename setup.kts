@@ -2,6 +2,7 @@ import java.io.File
 
 fun lang(language: String) = "https://github.com/devkt-plugins/$language-devkt.git"
 fun github(org: String, repo: String) = "https://github.com/$org/$repo.git"
+fun coding(org: String, repo: String) = "https://git.coding.net/$org/$repo.git"
 val target = File("target").apply { if (!exists()) mkdir() }
 
 listOf(
@@ -14,6 +15,7 @@ listOf(
     lang("toml"),
     lang("rust"),
     lang("properties"),
+		coding("ice1000", "pilang-devkt"),
     github("covscript", "covscript-devkt")
 )
     .asSequence()
