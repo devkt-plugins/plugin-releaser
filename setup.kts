@@ -15,13 +15,13 @@ listOf(
     lang("toml"),
     lang("rust"),
     lang("properties"),
-		coding("ice1000", "pilang-devkt"),
+    // coding("ice1000", "pilang-devkt"),
     github("covscript", "covscript-devkt")
 )
     .asSequence()
     .onEach { repository ->
       ProcessBuilder()
-          .command("git", "clone", repository, "--depth=1")
+          .command("git", "clone", repository)
           .directory(null)
           .inheritIO()
           .start()
